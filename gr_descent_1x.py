@@ -24,7 +24,7 @@ def costfn(theta):                                  # calculates cost function
     temp=X.dot(theta)-Y
     return np.sum(np.power(temp,2))/(2*m)
 
-def gradient(theta):                                # calculates gradient descent
+def gradient_descent(theta):                                # calculates gradient descent
     for _ in range(iterations):
         temp=X.dot(theta)-Y
         temp2=X.transpose()
@@ -32,7 +32,7 @@ def gradient(theta):                                # calculates gradient descen
         theta= theta - (alpha/m)*temp
     return theta
 
-theta=gradient(theta)
+theta=gradient_descent(theta)
 cost_value=costfn(theta)
 
 print("Value of theta and minimum error")
